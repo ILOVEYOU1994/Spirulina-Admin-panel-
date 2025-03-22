@@ -3,18 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
     <script defer src="admin.js"></script>
 </head>
 <body>
-    <h2>Admin Panel - Manage Products</h2>
-    
-    <!-- Add Product Form -->
-    <input type="text" id="productName" placeholder="Product Name">
-    <input type="text" id="productPrice" placeholder="Product Price">
-    <button onclick="addProduct()">Add Product</button>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li onclick="showSection('products')">Manage Products</li>
+                <li onclick="showSection('blogs')">Manage Blogs</li>
+                <li onclick="showSection('updates')">Manage Updates</li>
+                <li onclick="showSection('contacts')">Contact Messages</li>
+            </ul>
+        </div>
 
-    <h3>Product List</h3>
-    <ul id="productList"></ul>
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2 id="section-title">Manage Products</h2>
+
+            <!-- Product Management Section -->
+            <div id="products" class="section">
+                <input type="text" id="productName" placeholder="Product Name">
+                <input type="text" id="productPrice" placeholder="Product Price">
+                <button onclick="addProduct()">Add Product</button>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList"></tbody>
+                </table>
+            </div>
+
+            <!-- Blog Management Section -->
+            <div id="blogs" class="section" style="display: none;">
+                <input type="text" id="blogTitle" placeholder="Blog Title">
+                <textarea id="blogContent" placeholder="Blog Content"></textarea>
+                <button onclick="addBlog()">Add Blog</button>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blogList"></tbody>
+                </table>
+            </div>
+
+            <!-- Updates Management Section -->
+            <div id="updates" class="section" style="display: none;">
+                <input type="text" id="updateTitle" placeholder="Update Title">
+                <textarea id="updateContent" placeholder="Update Content"></textarea>
+                <button onclick="addUpdate()">Add Update</button>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="updateList"></tbody>
+                </table>
+            </div>
+
+            <!-- Contact Messages Section -->
+            <div id="contacts" class="section" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
