@@ -1,4 +1,4 @@
-const AIRTABLE_BASE_ID = "appXXXXXXXXXXXXX"; // Replace with your Base ID
+const AIRTABLE_BASE_ID = "appAmGEyKLCfHanU5"; // Replace with your Base ID
 const AIRTABLE_TABLE_NAME = "Products"; // Replace with your table name
 const AIRTABLE_API_KEY = "pat21XVTxCRSSYpcS.bcaac2bb0a55932ea139c57b4665b8f433779355b3e1005e2655e6ea50c336e5"; // Use your new secure token
 
